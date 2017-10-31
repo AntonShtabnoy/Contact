@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>www.itechArt</groupId>
+    <artifactId>contact-directory</artifactId>
+    <packaging>war</packaging>
+    <version>1.0-SNAPSHOT</version>
+    <name>A custom project using myfaces</name>
+    <url>http://www.myorganization.org</url>
+
+    <build>
+        <finalName>contact-directory</finalName>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>2.3.1</version>
+                <configuration>
+                    <source>1.7</source>
+                    <target>1.7</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <!-- Profile to run jetty, so the tomcat jars are included in the bundle. They are not included by default -->
+    <profiles>
+        <profile>
+            <id>jettyConfig</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.mortbay.jetty</groupId>
+                        <artifactId>maven-jetty-plugin</artifactId>
+                        <configuration>
+                            <scanIntervalSeconds>10</scanIntervalSeconds>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+
+            <dependencies>
+                <dependency>
+                    <groupId>javax.servlet</groupId>
+                    <artifactId>jsp-api</artifactId>
+                    <version>2.0</version>
+                    <scope>compile</scope>
+                </dependency>
+                <dependency>
+                    <groupId>tomcat</groupId>
+                    <artifactId>jasper-compiler</artifactId>
+                    <version>5.5.9</version>
+                    <scope>compile</scope>
+                </dependency>
+                <dependency>
+                    <groupId>tomcat</groupId>
+                    <artifactId>jasper-runtime</artifactId>
+                    <version>5.5.9</version>
+                    <scope>compile</scope>
+                </dependency>
+                <dependency>
+                    <groupId>tomcat</groupId>
+                    <artifactId>jasper-compiler-jdt</artifactId>
+                    <version>5.5.9</version>
+                    <scope>compile</scope>
+                </dependency>
+            </dependencies>
+
+            <pluginRepositories>
+                <!-- Repository to get the jetty plugin -->
+                <pluginRepository>
+                    <id>mortbay-repo</id>
+                    <name>mortbay-repo</name>
+                    <url>http://www.mortbay.org/maven2/snapshot</url>
+                </pluginRepository>
+            </pluginRepositories>
+
+        </profile>
+    </profiles>
+
+    <repositories>
+        <repository>
+            <releases>
+                <enabled>false</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+            <id>apache-maven-snapshots</id>
+            <url>http://people.apache.org/repo/m2-snapshot-repository</url>
+        </repository>
+        <!--<repository>-->
+            <!--<id>java.net</id>-->
+            <!--<url>http://download.java.net/maven/1</url>-->
+            <!--<layout>legacy</layout>-->
+        <!--</repository>-->
+    </repositories>
+
+    <!-- Project dependencies -->
+    <dependencies>
+        <dependency>
+            <groupId>org.apache.myfaces.core</groupId>
+            <artifactId>myfaces-api</artifactId>
+            <version>1.2.2</version>
+            <scope>compile</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.myfaces.core</groupId>
+            <artifactId>myfaces-impl</artifactId>
+            <version>1.2.2</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>6.0.5</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.myfaces.tomahawk</groupId>
+            <artifactId>tomahawk</artifactId>
+            <version>1.1.6</version>
+            <scope>runtime</scope>
+            <exclusions>
+                <exclusion>
+                    <groupId>javax.servlet</groupId>
+                    <artifactId>jstl</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>javax.transaction</groupId>
+            <artifactId>jta</artifactId>
+            <version>1.1</version>
+        </dependency>
+        <dependency>
+            <groupId>jstl</groupId>
+            <artifactId>jstl</artifactId>
+            <version>1.2</version>
+            <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>commons-fileupload</groupId>
+            <artifactId>commons-fileupload</artifactId>
+            <version>1.2.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>1.7.25</version>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-log4j12</artifactId>
+            <version>1.7.25</version>
+        </dependency>
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>2.3</version>
+        </dependency>
+        <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+            <version>1.2.12</version>
+        </dependency>
+        <dependency>
+            <groupId>org.quartz-scheduler</groupId>
+            <artifactId>quartz</artifactId>
+            <version>2.2.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.quartz-scheduler</groupId>
+            <artifactId>quartz-jobs</artifactId>
+            <version>2.2.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.antlr</groupId>
+            <artifactId>ST4</artifactId>
+            <version>4.0.8</version>
+        </dependency>
+        <dependency>
+            <groupId>org.freemarker</groupId>
+            <artifactId>freemarker</artifactId>
+            <version>2.3.23</version>
+        </dependency>
+        <dependency>
+            <groupId>javax.mail</groupId>
+            <artifactId>mail</artifactId>
+            <version>1.4.7</version>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.0</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <version>3.1.0</version>
+        </dependency>
+
+
+    </dependencies>
+
+
+</project>
