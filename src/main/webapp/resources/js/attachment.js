@@ -43,7 +43,7 @@ attachmentsFunctionsAndParams.addAttachment = function() {
         if(idTr > 0) {
             editIdAttachment.setAttribute("name", "editIdAttachment");
             editIdAttachment.setAttribute("value", "" + idTr);
-            editIdAttachment.setAttribute("class","attachment");
+            editIdAttachment.setAttribute("class","attachment hid");
             patentTr.appendChild(editIdAttachment);
         }
         attachmentsFunctionsAndParams.cancelAttachment();
