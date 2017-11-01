@@ -7,8 +7,8 @@
     <link rel="stylesheet" type="text/css" href="<c:url value="/resources/css/home.css"/>">
     <link rel="stylesheet" type="text/css" href="<c:url value="/resources/css/search.css"/>">
     <link rel="stylesheet" type="text/css" href="<c:url value="/resources/css/bootstrap.css"/>">
-    <%@ include file="header.jsp" %>
     <title>Search</title>
+    <%@ include file="header.jsp" %>
 </head>
 <body>
 
