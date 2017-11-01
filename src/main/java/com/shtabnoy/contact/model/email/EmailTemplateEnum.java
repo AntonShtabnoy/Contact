@@ -61,6 +61,7 @@ public enum EmailTemplateEnum {
             emailParamsMap.put(ContactParameter.TITLE, request.getParameter(MESSAGE_TITLE));
             emailParamsMap.put(ContactParameter.MESSAGE, request.getParameter(MESSAGE_TEXT));
             emailParamsMap.put(BYE_TEXT, request.getParameter(BYE_TEXT));
+            LOGGER.info("User wants to send message with params: sender_name- " + request.getParameter(SENDER_NAME) + " sender_surname- " + request.getParameter(SENDER_SURNAME) + " sender_email- " + request.getParameter(SENDER_EMAIL) + " sender_phone- " + request.getParameter(SENDER_PHONE) + " title- " + request.getParameter(MESSAGE_TITLE) + " text- " + request.getParameter(MESSAGE_TEXT));
             isGroupSend = request.getParameter("radioEmail");
             InputStream input = getClass().getClassLoader().getResourceAsStream(MAIL_PROPERTIES);
             Properties PROPERTIES = new Properties();
