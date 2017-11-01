@@ -47,6 +47,7 @@ public class SearchContactCommand implements Command {
         } else {
             try {
                 Contact contact = Initializer.initializeContactFromRequest(request);
+                LOGGER.info("User want to search contact: "+ contact);
                 DAOFactory mySqlFactory = DAOFactory.getDAOFactory(DAOFactory.MYSQL);
                 DAO<Contact, Integer> contactDAO = null;
                 if (mySqlFactory != null) {
