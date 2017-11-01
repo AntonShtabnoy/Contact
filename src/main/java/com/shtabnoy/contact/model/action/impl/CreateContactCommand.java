@@ -47,6 +47,7 @@ public class CreateContactCommand implements Command {
                     response.sendRedirect(ERROR_PAGE);
                 } else {
                     Contact contact = Initializer.initializeContactFromRequest(request);
+                    LOGGER.info("User want to insert contact: " + contact);
                     contactDAO.insert(contact);
 
                     LOGGER.info("Contact " + contact + " has been inserted!");
