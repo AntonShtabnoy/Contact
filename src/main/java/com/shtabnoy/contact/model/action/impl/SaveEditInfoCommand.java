@@ -345,7 +345,6 @@ public class SaveEditInfoCommand implements Command {
 
     }
     private static void createFolder(File folder) {
-        System.out.println(folder.toString());
         if (!folder.exists()) {
             boolean f = folder.mkdir();
             if (f) {
