@@ -456,20 +456,20 @@
         <span class="close" onclick="phoneFunctionsAndParams.closePhoneModal()">&times;</span>
         <h3>New phone:</h3>
         <div class="form-group">
-            <label>Country code:</label>
+            <label>Country code<span class="text-red">*</span></label>
             <input type="hidden" id="phoneID" value="${contactProfile.id}">
             <input type="text" id="countryCode" class="form-control" maxlength="3" minlength="3" placeholder="XXX">
-            <label for="operatorCode">Operator code:</label>
+            <label for="operatorCode">Operator code<span class="text-red">*</span></label>
             <input type="text" id="operatorCode" class="form-control" maxlength="2" minlength="2" placeholder="XX">
-            <label for="number">Phone number:</label>
+            <label for="number">Phone number<span class="text-red">*</span></label>
             <input type="text" id="number" class="form-control" placeholder="XXXXXXX" maxlength="8">
-            <label for="type">Mobile or home:</label>
+            <label for="type">Mobile or home</label>
             <select id="type" class="form-control">
                 <option value="Mobile">Mobile</option>
                 <option value="Home">Home</option>
                 <option value="Work">Work</option>
             </select>
-            <label for="phoneComment">Comment:</label>
+            <label for="phoneComment">Comment</label>
             <input type="text" id="phoneComment" class="form-control">
             <input type="hidden" value="Save1" id="savePhone" class="btn btn-md">
             <input type="button" value="Save" class="btn btn-md bg-success"
